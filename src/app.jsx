@@ -1,8 +1,11 @@
 import './app.css'
+import Home from './Pages/Home'
 
 export function App() {
   return (
-    <>Home</>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
