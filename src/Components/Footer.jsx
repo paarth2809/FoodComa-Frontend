@@ -1,226 +1,80 @@
-import IconArrowRight from "../Components/Icons/ArrowRight";
-
-import PizzaImage from '../assets/Images/pizza2.png';
-import CookingImage from '../assets/Images/cooking1.png';
-import IconPatchCheck from "../Components/Icons/IconPatchCheck";
-import OrderFood from '../assets/Images/orderFood.png';
-import Pickup from '../assets/Images/pickup.png';
-import Enjoy from '../assets/Images/enjoy.png';
-import Layout from "../Layouts/Layout";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllProducts } from "../Redux/Slices/ProductSlice";
-import { Link } from "react-router-dom";
-function Home() { 
-    const dispatch = useDispatch();
-
-    const { productsData } = useSelector((state) => state.product);
-
-    useEffect(() => {
-        // This will be called when the component mounts
-        dispatch(getAllProducts());
-    }, []);
-
+function Footer() {
     return (
-        <Layout>
-        <div>
-            {/* Hero section */}
-            <section
-                className="flex flex-col-reverse items-center justify-center py-5 md:flex-row md:gap-7 bg-gradient-to-r from-amber-50 to-orange-300
-                "
-            >
-                <div className="w-4/6 ml-4 text-center md:w-2/6 md:text-left">
-
-                    <div className="flex justify-center text-4xl md:justify-normal">
-
-                        <h1 className="pb-5 font-bold text-transparent bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text">
-                            
-                            Enjoy the Slice {' '}
-                        </h1>
-                        <h1>
-                            😋
-                        </h1>
-
-                    </div>
-
-
-                    <p className="pb-4 text-[#6B7280]">
-                        The Pizza App lets you order your favorite pizza from the comfort of your home. 
-                        Enjoy the best pizza in town with just a few clicks.
-                    </p>
-
-                    <button
-                        className="flex items-center px-4 py-2 text-white bg-yellow-500 rounded-md hover:bg-yellow-600 group"
+          <footer className="text-gray-600 body-font ">
+            <div className="bg-gradient-to-r from-amber-50 to-orange-300">
+              <div className="container flex flex-col flex-wrap px-5 py-10 mx-auto sm:flex-row">
+                <p className="text-sm text-center text-gray-500 sm:text-left">
+                    &copy; 2024 Pizza App                    
+                  <a
+                    href="https://twitter.com/knyttneve"
+                    rel="noopener noreferrer"
+                    className="ml-1 text-gray-600"
+                    target="_blank"
+                  >
+                    @pizza-apps
+                  </a>
+                </p>
+                <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
+                  <a className="text-[#FF9110] hover:text-[#ff8f1077]">
+                    <svg
+                      fill="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
                     >
-                        Order Now 
-                        <span className="inline-block ml-3 transition-transform ease-in-out group-hover:translate-x-2">
-                            <IconArrowRight />
-                        </span>
-                    </button>
-                </div>
-
-                <div>
-                    <img
-                        src={PizzaImage}
-                        alt="Pizza"
-                        width={550}
-                        height={550}
-                    />
-                </div>
-
-
-            </section>
-
-
-            {/* Services section */}
-            <section
-                className="py-4 mt-6 bg-gradient-to-r from-amber-50 to-orange-300"
-            >
-                <div className="container flex flex-col md:flex-row">
-                    <div className="flex flex-col items-center justify-center rounded-lg lg:w-1/2">
-                        <img
-                            src={CookingImage}
-                            width={500}
-                            className="rounded-lg"
-                            alt="Cooking"
-                        />
-                    </div>
-                    <div className="flex flex-col flex-wrap text-center lg:py-6 lg:w-1/2 lg:pl-12 lg:text-left">
-
-                        <div className="flex flex-col items-center lg:items-start">
-                            <div>
-                                <h2 className="mb-2 text-5xl font-extrabold text-transparent title-font bg-gradient-to-r from-orange-600 to-orange-300 bg-clip-text">
-                                    Cooked by the best <br/> chefs in the world
-                                </h2>
-                                <p className="text-base leading-relaxed text-[#6B7280]">
-                                    There are many benefits regarding to that but the main ones are:
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="w-full p-1">
-                            <div className="flex items-center h-full p-2 text-2xl rounded">
-                                <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4" />
-                                <span className="font-bold title-font">Perfect taste</span>
-                            </div>
-                        </div>
-                        <div className="w-full p-1">
-                            <div className="flex items-center h-full p-2 text-2xl rounded">
-                                <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4" />
-                                <span className="font-bold title-font">Prepared quickly</span>
-                            </div>
-                        </div>
-                        <div className="w-full p-1">
-                            <div className="flex items-center h-full p-2 text-2xl rounded">
-                                <IconPatchCheck className="text-[#F38339] w-10 h-10 mr-4" />
-                                <span className="font-bold title-font">Food hygeine guaranteed</span>
-                            </div>
-                        </div>
-
-                        <div className="px-5 py-4 mx-auto">
-
-                            <div className="flex justify-center py-4">
-
-                                <div className="inline-flex w-16 h-1 bg-yellow-500 rounded-full"></div>
-
-                            </div>
-
-                            <div className="flex flex-wrap space-y-6 md:space-y-0">
-
-                                <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                        <img src={OrderFood} />
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
-                                            Order Food
-                                        </h2>
-                                        <p className="text-base leading-relaxed">
-                                            As easy as 1, 2, 3. Just select your favorite pizza and place your order.
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                        <img src={Pickup} />
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
-                                            Pickup Food
-                                        </h2>
-                                        <p className="text-base leading-relaxed">
-                                            Pick up your order from the nearest store or get it delivered to your doorstep.
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div className="flex flex-col items-center text-center p-4 md:w-1/3">
-                                    <div className="inline-flex items-center justify-center flex-shrink-0 w-20 h-20 mb-5 bg-yellow-100 rounded-full">
-                                        <img src={Enjoy} />
-                                    </div>
-                                    <div className="flex-grow">
-                                        <h2 className="mb-3 text-lg font-bold text-gray-900 title-font">
-                                            Enjoy Food
-                                        </h2>
-                                        <p className="text-base leading-relaxed">
-                                            As soon as you get your order, enjoy the delicious pizza with your loved ones.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        
-                    </div>
-
-                </div>
-
-            </section>
-
-            <div className="mx-auto">
-                <div className="flex flex-wrap justify-center">
-                    {productsData.map((item) => {
-                        return (
-                            item.inStock && (
-                                <div className="p-4 md:w-1/3" key={item._id}>
-                                    <Link to={`/product/${item._id}`}>
-                                        <div className="overflow-hidden border rounded-lg border-opacity-60">
-                                            <img 
-                                                src={item.productImage}
-                                                alt="Pizza Image"
-                                                className="object-cover object-center w-full lg:h-48 md:h-36"
-                                            />
-                                            <div className="p-6 border">
-                                                <h2 className="text-xs font-medium tracking-widest text-gray-400 title-font">
-                                                    {item.category}
-                                                </h2>
-                                                <h1 className="mb-3 text-lg font-medium text-gray-900 title-font">
-                                                    {item.productName}
-                                                </h1>
-                                                <p className="mb-4 text-base leading-relaxed">
-                                                    {item.description}
-                                                </p>
-                                                <p className="text-lg font-medium text-gray-900 title-font">
-                                                    ${item.price}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </Link>
-                                </div>
-                            )
-                        )
-                    })}
-                </div>
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a className="ml-3 text-[#FF9110] hover:text-[#ff8f1077]">
+                    <svg
+                      fill="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a className="ml-3 text-[#FF9110] hover:text-[#ff8f1077]">
+                    <svg
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                  </a>
+                  <a className="ml-3 text-[#FF9110] hover:text-[#ff8f1077]">
+                    <svg
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="0"
+                      className="w-5 h-5"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="none"
+                        d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                      ></path>
+                      <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                  </a>
+                </span>
+              </div>
             </div>
-
-            
-
-        </div>
-        </Layout>
-    );
+          </footer>
+);
 }
 
-export default Home;
+export default Footer;
